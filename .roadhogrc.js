@@ -3,7 +3,18 @@ export default {
   define: {
     'process.env': {},
     'process.env.NODE_ENV': process.env.NODE_ENV,
-    'process.env.API_ENV': process.env.NODE_ENV,
+    'process.env.STAGE_ENV': process.env.STAGE_ENV || 'dev',
+    'process.env.API_ENV': {
+      "dev" : {
+        "envs":'dev',
+      },
+      "staging" : {
+        "envs":'staging',
+      },
+      "production" : {
+        "envs":'production',
+      }
+    }
   },
   env: {
     development: {

@@ -1,5 +1,5 @@
-import { backendAddr } from '../utils/config';
+import discover from '../utils/APIDiscovery';
 
 export function getEnv() {
-    return "API:" + process.env.API_ENV + " STAGE:" + process.env.STAGE_ENV + " NODE:" + process.env.NODE_ENV
+    return discover("envs")
 }
