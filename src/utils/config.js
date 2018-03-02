@@ -8,7 +8,7 @@ export default {
 };
 
 export const backendAddr = (() => {
-  const env = process.env.API_ENV
+  const env = process.env.STAGE_ENV
   switch (env) {
     case 'staging': return {
       envs:'staging',
